@@ -8,6 +8,7 @@ This News Web App is built with React.js and integrates Firebase Authentication 
 
 ## Screenshots
 
+![screencapture-localhost-3000-2023-12-06-16_35_56](https://github.com/ashwani312/NewsToday/assets/105036643/64c5f111-0afe-4704-a4f1-fc3af0b7b261)
 
 
 ## Features
