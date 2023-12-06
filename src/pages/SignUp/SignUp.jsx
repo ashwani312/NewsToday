@@ -57,7 +57,7 @@ const SignUp = () => {
               onChange={(e) => setValues((prev) => ({ ...prev, email: e.target.value }))} />
             <input type="password" placeholder='password'
               onChange={(e) => setValues((prev) => ({ ...prev, password: e.target.value }))} />
-            <b style={{color : "crimson"}}>{errorMsg}</b>
+            <b style={{color : "crimson", fontFamily : ""}}>{errorMsg}</b>
             <button disabled={submitButtonDisabled}>Register</button>
           </form>
         </div>

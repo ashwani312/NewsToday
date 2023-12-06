@@ -7,8 +7,7 @@ import './Faviourites.scss'
 
 const Faviourites = () => {
   const data = useSelector(state => state.faviourite.fav);
-  console.log(data?"chintu" : "montu")
-  console.log(data)
+
 
   return (
     <div className='Faviourites'>
