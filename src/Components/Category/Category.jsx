@@ -1,15 +1,16 @@
 import React from 'react'
 import './Category.scss'
+import { Link } from 'react-router-dom'
 const Category = () => {
     const data = [
         {
-            title: "Education",
-            imgUrl: "https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_640.jpg",
-            content: "Global Family Travels Climate Education"
+            title: "Health",
+            imgUrl: "https://cdn.pixabay.com/photo/2017/04/22/10/15/woman-2250970_640.jpg",
+            content: "Global Family Travels Climate Health"
         },
         {
             title: "Sports",
-            imgUrl: "https://cdn.pixabay.com/photo/2016/11/29/06/20/blonde-1867768_1280.jpg",
+            imgUrl: "https://cdn.pixabay.com/photo/2012/11/28/11/11/football-67701_1280.jpg",
             content: "Read All the Sports News"
         },
         {
@@ -23,9 +24,9 @@ const Category = () => {
             content: "Read All the Business News"
         },
         {
-            title: "Weather",
-            imgUrl: "https://cdn.pixabay.com/photo/2017/05/04/16/37/meeting-2284501_640.jpg",
-            content: "Read All the Weather News"
+            title: "Science",
+            imgUrl: "https://cdn.pixabay.com/photo/2019/10/25/06/07/sky-4576072_640.jpg",
+            content: "Read All the Science News"
         },
 
     ]
@@ -38,9 +39,11 @@ const Category = () => {
             <div className="categoryBottom">
                 {data.map((item, index) => (
                     <div className='singleCat' key={index}>
-                        <img src={item.imgUrl} alt="" />
-                        <p>{item.title}</p>
-                        <h2>{item.content}</h2>
+                        <Link to={`/categories/${item.title.toLowerCase()}`} className='link'>
+                            <img src={item.imgUrl} alt="" />
+                            <p>{item.title}</p>
+                            <h2>{item.content}</h2>
+                        </Link>
                     </div>
                 ))}
             </div>

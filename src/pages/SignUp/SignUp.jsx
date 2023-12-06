@@ -4,6 +4,9 @@ import './SignUp.scss'
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from '../../firebase/firebase';
 import Navbar from '../../Components/Navbar/Navbar';
+import { toast } from 'react-toastify';
+
+
 const SignUp = () => {
   const navigate = useNavigate()
   const [values, setValues] = useState({
@@ -16,24 +19,25 @@ const SignUp = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    if (!values.name || !values.email || !values.pass) {
-      setErrorMsg("Fill all fields");
+    console.log(values)
+    if (values?.name ==="" || !values?.email==="" || !values?.pass==="") {
+      setErrorMsg("Please Fill all The fields");
       return;
     }
     setSubmitButtonDisabled(true);
-    createUserWithEmailAndPassword(auth, values.email, values.password).
-      then(async(res) => {
+    createUserWithEmailAndPassword(auth, values?.email, values?.password)
+    .then(async(res) => {
+      toast.success("Register Successfully") 
         setSubmitButtonDisabled(false);
         const user = res.user;
         await updateProfile(user, {
           displayName : values.name
         });
-        console.log(user)
-        navigate("/login")
+        navigate("/")
       }).catch((err)=>{
         setSubmitButtonDisabled(false);
-        console.log("Error", err)
-      })
+        toast.warning("Something Went wrong");
+      });
   }
   return (
     <>

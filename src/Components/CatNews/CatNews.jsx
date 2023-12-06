@@ -7,10 +7,9 @@ const CatNews = () => {
     const [page, setPage] = useState(10);
     const [data, setData] = useState([])
     const { cat } = useParams();
-    console.log(cat);
 
     useEffect(() => {
-        const url = `https://newsapi.org/v2/top-headlines?country=us&category=${cat}&apiKey=a7f4eca04e0348e4ae022f197e05d730&pageSize=${page}`;
+        const url = `https://newsapi.org/v2/top-headlines?country=us&category=${cat}&apiKey=ea5917d0cd47457cba5c934abe3db484&pageSize=${page}`;
         const fetchTheUrl = async () => {
             const res = await fetch(url);
             const data = await res.json();

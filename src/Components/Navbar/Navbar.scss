@@ -14,7 +14,7 @@
     .left {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         cursor: pointer;
-        color: rgb(21, 102, 93);
+        color: rgb(35, 216, 192);
 
         h1 {
             background-color: black;
@@ -71,6 +71,28 @@
             padding: 9px 17px;
             border-radius: 30px;
         }
+
+        .userdetails{
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            img{
+                height: 30px;
+                border-radius: 10px;
+            }
+            button{
+                padding: 7px 14px;
+                background-color: crimson;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                color: white;
+                font-size: 14px;
+            }
+        }
+        
 
     }
 }

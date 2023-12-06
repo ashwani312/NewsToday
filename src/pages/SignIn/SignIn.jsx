@@ -4,6 +4,7 @@ import {  signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../firebase/firebase';
 import './SignIn.scss'
 import Navbar from '../../Components/Navbar/Navbar';
+import { toast } from 'react-toastify';
 
 const SignIn = () => {
   const navigate = useNavigate()
@@ -16,18 +17,19 @@ const SignIn = () => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    if (!values.name || !values.email || !values.pass) {
+    if (values.name==="" || values.email==="" || values.pass==="") {
       setErrorMsg("Please fill all fields");
       return;
     }
     setSubmitButtonDisabled(true);
-    signInWithEmailAndPassword(auth, values.email, values.password).
-      then(async(res) => {
+    signInWithEmailAndPassword(auth, values.email, values.password)
+    .then(async(res) => {
+      toast.success("Login Successfully") 
         setSubmitButtonDisabled(false);
         navigate("/")
       }).catch((err)=>{
         setSubmitButtonDisabled(false);
-        console.log("Error", err)
+        toast.warning("Something Went wrong");
       })
   }
   return (

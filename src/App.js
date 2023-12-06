@@ -9,58 +9,68 @@ import Home from "./pages/Home/Home";
 import SignUp from "./pages/SignUp/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
 import SingleNews from "./Components/SingleNews/SingleNews";
-import Category from "./Components/Category/Category";
 import Faviourites from "./Components/Faviourites/Faviourites";
 import CatNews from "./Components/CatNews/CatNews";
+import { ToastContainer, Slide } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
-const Layout = () =>{
-  return(
+const Layout = () => {
+  return (
     <div className="App">
-    <Navbar/>
-    <Outlet />
-    <Footer/>
+      <Navbar />
+      <Outlet />
+      <Footer />
+      <ToastContainer theme='colored' transition={Slide} autoClose={3000} hideProgressBar={true}></ToastContainer>
+
     </div>
   )
 }
 
 function App() {
   const router = createBrowserRouter([
-{
-  path : "/",
-  element : <Layout/>,
-  children : [
     {
-      path : "/",
-      element : <Home/>
-    },
-    {
-      path : "/:news",
-      element : <SingleNews/>
-    },
-    {
-      path : "/faviourites",
-      element : <Faviourites/>
-    },
-    {
-      path : "/categories/:cat",
-      element : <CatNews/>
-    },
- 
-  ]
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />
+        },
+        {
+          path: "/:news",
+          element: <SingleNews />
+        },
+        {
+          path: "/faviourites",
+          element: <Faviourites />
+        },
+        {
+          path: "/categories/:cat",
+          element: <CatNews />
+        },
+        {
+          path: "/singlenews/:news",
+          element: <SingleNews />
+        },
 
-},
-{
-  path : "/register",
-  element : <SignUp/>
-},
-{
-  path : "/login",
-  element : <SignIn/>
-},
+      ]
+
+    },
+    {
+      path: "/register",
+      element: <SignUp />
+    },
+    {
+      path: "/login",
+      element: <SignIn />
+    },
   ]);
   return (
-          <RouterProvider router={router} />
+    <>
+      <RouterProvider router={router} />
+
+    </>
   );
 }
 

@@ -23,6 +23,7 @@
 
         p{
             color: gray;
+            font-size: 12px;
             &:nth-child(1){
                 color: black;
             }
@@ -48,10 +49,14 @@
                 // box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
                 color: #fff;
                 transform: translateY(-7px);
-              }
-              
-              &:active {
+            }
+            
+            &:active {
                 // transform: translateY(-1px);
+            }
+            &:nth-child(2n):hover{
+                  transform: translateY(10px);
+                background-color: crimson;
               }
           }
           
