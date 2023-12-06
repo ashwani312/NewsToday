@@ -1,0 +1,34 @@
+.AllNews{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px 100px;
+    text-align: center;
+
+    .latesth2{
+        padding: 10px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border-left: 10px solid green;
+    }
+
+    .loadmorebutton{
+ 
+            cursor: pointer;
+            border: 2px solid rgb(24, 111, 101);
+            font-size: 15px;
+            color: rgb(24, 111, 101);
+            padding: 9px 17px;
+            border-radius: 30px;
+
+ 
+                background-color: rgb(24, 111, 101);
+                color: white;
+     
+
+        
+    }
+}
