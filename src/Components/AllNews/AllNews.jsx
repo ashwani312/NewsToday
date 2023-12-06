@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './AllNews.scss';
 import News from '../News/News';
-import { collection, addDoc, doc, setDoc, getDocs, onSnapshot, deleteDoc } from "firebase/firestore";
+
 
 const AllNews = () => {
     const [page, setPage] = useState(10);

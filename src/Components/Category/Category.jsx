@@ -34,7 +34,6 @@ const Category = () => {
         <div className='category'>
             <div className="categoryTop">
                 <h3>Featured Categories</h3>
-                {/* <button>slide</button> */}
             </div>
             <div className="categoryBottom">
                 {data.map((item, index) => (

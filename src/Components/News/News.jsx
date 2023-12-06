@@ -21,7 +21,7 @@ const News = ({ item, hideFav }) => {
   }
   return (
     <div className='News'>
-      <img src={item?.urlToImage === null ? "https://cdn.pixabay.com/photo/2016/10/09/08/32/digital-marketing-1725340_1280.jpg" : item.urlToImage} alt="" />
+      <img src={item?.urlToImage === null ? "https://cdn.pixabay.com/photo/2016/10/09/08/32/digital-marketing-1725340_1280.jpg" : item?.urlToImage} alt="" />
       <div className="NewsContent">
         <h2>{item?.title}</h2>
         <p>{item?.content?.substring(0, 200)}</p>
