@@ -6,19 +6,29 @@ const Navbar = () => {
     <div className='navbar'>
       <div className="left">
         <Link to={"/"} className='link'>
-        <h1>NEWS  TODAY</h1>
+          <h1>NEWS  TODAY</h1>
         </Link>
       </div>
       <div className="center">
-        <p>News</p>
-        <p>Travel</p>
-        <p>Business</p>
-        <Link className='link' to={`/:entertainment`}>
-        
-        <p >Entertainment</p>
+      <Link to={"/"} className='link'>
+        <p>Home</p>
+   
         </Link>
+        <Link className='link' to={`/categories/sports`}>
+        <p>Sports</p>
+        </Link>
+        <Link className='link' to={`/categories/business`}>
+
+        <p>Business</p>
+        </Link>
+        <Link className='link' to={`/categories/entertainment`}>
+          <p >Entertainment</p>
+        </Link>
+        <Link className='link' to={`/faviourites`}>
+ 
         <p>Faviourites</p>
-        <p></p>
+        </Link>
+   
       </div>
       <div className="right">
         <Link to={`/register`} className='link'>

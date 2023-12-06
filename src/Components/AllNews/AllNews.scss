@@ -1,10 +1,10 @@
 .AllNews{
     flex: 4;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: start;
-    flex-wrap: wrap;
-    justify-content: center;
+    // justify-content: center;
     gap: 50px;
     padding: 20px 100px;
     text-align: center;
@@ -14,8 +14,10 @@
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         border-left: 10px solid green;
     }
-
-    .loadmorebutton{
+    .loadmorebuttoncontainer{
+        width: 100%;
+        
+        .loadmorebutton{
  
             cursor: pointer;
             border: 2px solid rgb(24, 111, 101);
@@ -31,4 +33,7 @@
 
         
     }
+    }
+
+
 }

@@ -1,16 +1,43 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
+import {  signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../../firebase/firebase';
 import './SignIn.scss'
+import Navbar from '../../Components/Navbar/Navbar';
 
 const SignIn = () => {
-  const [username, setUsername] = useState(localStorage.getItem("username"));
-  const [password, setPassword] = useState("");
+  const navigate = useNavigate()
+  const [values, setValues] = useState({
+    email: "",
+    password: ""
+  });
+  const [errorMsg, setErrorMsg] = useState("");
+  const [submitButtonDisabled, setSubmitButtonDisabled] = useState(false);
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    if (!values.name || !values.email || !values.pass) {
+      setErrorMsg("Please fill all fields");
+      return;
+    }
+    setSubmitButtonDisabled(true);
+    signInWithEmailAndPassword(auth, values.email, values.password).
+      then(async(res) => {
+        setSubmitButtonDisabled(false);
+        navigate("/")
+      }).catch((err)=>{
+        setSubmitButtonDisabled(false);
+        console.log("Error", err)
+      })
+  }
   return (
+    <>
+    <Navbar/>
     <div className='login'>
     <div className="card">
       <div className="left">
-        <h1>Blog World</h1>
-        <p>Login and Write your Blog</p>
+        <h1>News Today</h1>
+        <p>Login and Read your News by your prefferece</p>
         <span style={{fontWeight : "bold"}}>Don't have an account?</span>
         <Link to="/register">
           <button>Register</button>
@@ -18,21 +45,23 @@ const SignIn = () => {
       </div>
       <div className="right">
         <h1>Login</h1>
-        <form>
-          <input type="text"
-            placeholder='Username'
-            onChange={e => setUsername(e.target.value)}
-            value={localStorage.getItem("username")}
+        <form onSubmit={handleSubmit}>
+          <input type="email"
+            placeholder='email'
+            onChange={(e) => setValues((prev) => ({ ...prev, email: e.target.value }))}
+            // value={localStorage.getItem("username")}
           />
           <input type="password"
             placeholder='password'
-            onChange={e => setPassword(e.target.value)}
+            onChange={(e) => setValues((prev) => ({ ...prev, password: e.target.value }))}
           />
-          <button type="submit">Login</button>
+          <b>{errorMsg}</b>
+          <button type="submit" disabled={submitButtonDisabled}>Login</button>
         </form>
       </div>
     </div>
   </div>
+  </>
   )
 }
 
