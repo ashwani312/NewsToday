@@ -1,6 +1,6 @@
 # News Web App
 
-![App Demo](path/to/app/demo.gif)
+###  Video = https://www.youtube.com/watch?v=UF5gFBWLPmQ
 
 ## Overview
 
