@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './SingleNews.scss'
 import { Link } from 'react-router-dom';
+import ShareButtons from '../ShareButton';
 
 const SingleNews = () => {
   const [item, setItem] = useState();
@@ -19,9 +20,9 @@ const SingleNews = () => {
           <p>{item?.content}</p>
           <div className='authorandTime'>
         <h4>{item?.author}</h4> <span>{new Date(item?.publishedAt).toDateString()}</span>
+        <ShareButtons url={item.url}/>
           </div>
           <Link to={item?.url}>
-          
         <button>Read Full Article</button>
           </Link>
         </div>
