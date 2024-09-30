@@ -42,7 +42,7 @@ const Footer = () => {
                 </div>
                 <div className="col3">
                     <h3>Contact Us</h3>
-                    <p>Mamta Nagar Road, BSK 3 <br />Delhi, India</p>
+                    <p>Kalka ji <br />Delhi, India</p>
                     <div className="social-icons">
                         <i className="fab fa-facebook"></i>
                         <i className="fab fa-twitter"></i>
@@ -50,7 +50,7 @@ const Footer = () => {
                         <i className="fab fa-instagram"></i>
                     </div>
                 </div>
-                <p className='footerWeb'>© 2023 - 2024  Ashwani's NewsToday.com. All Rights Reserved</p>
+                <p className='footerWeb'>© 2023 - 2024  Vaibhav's NewsToday.com. All Rights Reserved</p>
             </div>
             )
 }
