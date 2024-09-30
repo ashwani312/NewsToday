@@ -20,7 +20,7 @@ const SingleNews = () => {
           <p>{item?.content}</p>
           <div className='authorandTime'>
         <h4>{item?.author}</h4> <span>{new Date(item?.publishedAt).toDateString()}</span>
-        <ShareButtons url={item.url}/>
+       {item?.url &&  <ShareButtons url={item.url}/>}
           </div>
           <Link to={item?.url}>
         <button>Read Full Article</button>
